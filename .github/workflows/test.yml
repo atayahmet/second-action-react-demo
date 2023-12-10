@@ -13,6 +13,10 @@ jobs:
           node-version: 18
       - name: Install React Native
         run:  npx react-native@latest init AwesomeRNProject --install-pods
+      - name: List project inside
+        run: ls -al AwesomeRNProject
+      - name: Build IOS
+        run: cd AwesomeRNProject/ios && xcodebuild -workspace AwesomeRNProject.xcworkspace -scheme AwesomeRNProject
       - name: Install dependencies
         run: npm ci
       - name: Run tests
